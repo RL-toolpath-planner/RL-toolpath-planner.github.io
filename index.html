@@ -129,7 +129,7 @@
       <img src="./static/images/Teaser.png" width="101%" style="margin-left: auto;margin-right: auto;display: block;">
       <h2 class="subtitle has-text-centered">
         <p>&nbsp;</p>
-        <span class="dnerf"></span> This paper introduces a reinforcement learning-based planner that optimizes 3D printing toolpaths for large-scale applications, demonstrating generality and efficiency across different printing methods with significant improvements in model quality and reduction of printing errors.
+        <span class="dnerf"></span> This paper introduces a reinforcement learning-based planner that optimizes 3D printing toolpaths for large-scale applications, demonstrating generality and efficiency across different printing methods with significant improvements in printing quality and strength enhancement.
 
 
 
@@ -168,7 +168,12 @@ the thermal distortion in metallic printing can be reduced by 24.9%.</div>
         <div class="content has-text-justified">
           <img src="./static/images/subgraph triangle1sss8 (1).png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
           <p>&nbsp;</p>
-          <p>Our  RL-based planner is used to compute optimized toolpaths for 3D printing by navigating a graph. The method involves exploring a graph structured into local sub-graphs (LSGs) with defined neighbor rings, focusing on a current node. The planner uses a deep Q-network to evaluate and select the next best node based on learned Q-values, considering the current state of exploration, which incorporates the positions of nodes and their adjacency relationships. This process highlights changes and decisions in the path planning through color-coded blocks to visualize differences in adjacency matrices, aiding in understanding the transition between states. The method iteratively applies this process to navigate through the graph, ultimately determining an optimized toolpath, demonstrated through a series of illustrative steps and the resulting toolpath. This approach showcases how reinforcement learning can be effectively applied to complex pathfinding problems in 3D printing applications.
+          <p>llustration of using our RL-based planner to compute the toolpath on a graph G. Our RL-based planner explores G on a LSG with n-rings
+of neighbors (n = 2 in this example), given a current node v<sub>c</sub> (orange one). (h) The next best node of v<sub>c</sub> is determined by learning an updated deep
+Q-network to compute the Q-values (green bars) on every nodes in the LSG according to the state S<sup>*</sup>. The moving state S<sup>*</sup> is a tensor commonly determined
+by the current LSG and two previous steps in the partially planned toolpath (in black), which is formed by three adjacency matrices A<sup>‡</sup>, A<sup>†</sup> and A together
+with the positions of the LSG’s nodes listed in the last three columns. Color blocks in highlight the differences between A<sup>†</sup> and A (pink color) and between
+A<sup>‡</sup> and A<sup>†</sup> (blue color). The best next node will update to the graph G. Repeatedly applying this RL-based planner can determine the resultant toolpath.
           </p>
         </div>
         <br/>
@@ -194,7 +199,7 @@ the thermal distortion in metallic printing can be reduced by 24.9%.</div>
         <div class="content has-text-justified">
           <img src="./static/images/overview.png" width="90%" style="margin-left: auto;margin-right: auto;display: block;">
           <p>&nbsp;</p>
-          <p> This method utilizes an advanced planner for optimizing 3D printing toolpaths across three applications: wire-frame models, continuous fiber-reinforced layers, and LPBF metal printing. Starting with specific input graphs for each task, the planner generates tailored toolpaths that meet manufacturing objectives. These paths are visualized in distinct colors—red, green, and blue arrows—to indicate different sections or movements. The effectiveness of these optimized toolpaths is confirmed through physical experiments, demonstrating the planner's capability to enhance efficiency and quality in diverse 3D printing processes.</p>
+          <p> Applications in computing optimized toolpaths across three applications: wire-frame models, continuous fiber-reinforced layers, and LPBF metal printing. Starting with specific input graphs for each task, the planner generates optimized toolpaths that meet different manufacturing objectives. These paths are visualized in distinct colors—red, green, and blue arrows—to indicate different moving directions. The effectiveness of these optimized toolpaths is verified through physical experiments, demonstrating the planner's capability to enhance printing quality in diverse 3D printing processes.</p>
         </div>
         <br/>
 
@@ -218,7 +223,7 @@ the thermal distortion in metallic printing can be reduced by 24.9%.</div>
         <h3 class="title is-4">Progressive results of the planned toolpaths</h3>
         <div class="content has-text-justified">
           <img src="./static/images/pathTracing.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
-		  <p>Progressive results of the planned toolpaths for (a) wire-frame printing, (b) CCF printing, and (c) metallic printing. For CCF printing, bold lines are those edges traveled twice. The first graph of each printing process is the input graph </p>
+		  <p>Progressive results of the planned toolpaths for (a) wire-frame printing, (b) CCF printing, and (c) metallic printing. For CCF printing, bold lines are those edges traveled twice. The first graph of each printing process is the input graph. </p>
 
         </div>
         <br/>
@@ -236,7 +241,7 @@ the thermal distortion in metallic printing can be reduced by 24.9%.</div>
 toolpath generated by peeling heuristic vs. the toolpath
 generated by our RL-based planner. When using the peeling-like toolpath,
 we can observe the failure cases of  large bending deformation on struts, i.e., with large displacements caused by gravity. Also, stringing phenomenon
-occurs due to frequent lifting of the tool  </p>
+occurs due to frequent lifting of the tool.  </p>
 
         </div>
         <br/>
