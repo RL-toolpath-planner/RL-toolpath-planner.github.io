@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/cow-removebg-preview.png">
+  <link rel="icon" href="./static/images/teaser_icon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -72,12 +72,12 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Scalable RL-Based Toolpath Planner for 3D Printing</h1>
+          <h1 class="title is-1 publication-title"  style="font-size: 40px;">Scalable RL-Based Toolpath Planner for 3D Printing</h1>
          
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://seres0.github.io/"
+                <a href="toolpath-planer.github.io/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -86,7 +86,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://seres0.github.io/"
+                <a href="toolpath-planer.github.io"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -106,7 +106,7 @@
               </span>-->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://seres0.github.io/"
+                <a href="toolpath-planer.github.io"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -126,10 +126,15 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/teasure.png" width="85%" style="margin-left: auto;margin-right: auto;display: block;">
+      <img src="./static/images/Teaser (1).png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
       <h2 class="subtitle has-text-centered">
         <p>&nbsp;</p>
-        <span class="dnerf">SERES</span> advances sparse image-based 3D reconstruction, blending semantic insights and geometric regularization for enhanced detail and completeness.</h2>
+        <span class="dnerf"></span> This paper introduces a reinforcement learning-based planner that optimizes 3D printing toolpaths for large-scale applications, demonstrating versatility and efficiency across different printing methods with significant improvements in model quality and reduction of printing errors.
+
+
+
+
+</h2>
     </div>
   </div>
 </section>
@@ -142,9 +147,9 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-We propose a semantic-aware neural reconstruction method to generate 3D high-fidelity models from sparse images. To tackle the challenge of severe radiance ambiguity caused by mismatched features in sparse input, we enrich neural implicit representations by adding patch-based semantic logits that are optimized together with the signed distance field and the radiance field.  A novel regularization based on the geometric primitive masks is introduced to mitigate shape ambiguity. The performance of our approach has been verified in experimental evaluation. The average chamfer distances of our reconstruction on the DTU dataset can be reduced by 44% for SparseNeuS and 20% for VolRecon. When working as a plugin for those dense reconstruction baselines such as NeuS and Neuralangelo, the average error on the DTU dataset can be reduced by 69% and 68% respectively.  </p>
-        </div>
+          <p>We presents an efficient reinforcement learning (RL) based planner for computing optimized 3D printing toolpaths, which can work on graphs on large scales by constructing the state space on-the-fly. The planner can cover different 3D printing applications by defining their corresponding reward functions and state spaces. Toolpath generation problems in wire-frame printing, continuous fiber printing, and metallic printing are selected
+here to demonstrate generality. The resultant toolpaths have been applied in physical experiments to verify the performance of the planner. By this planner, wire-frame models with up to 3.3k struts can be successfully printed, up to 93.3% of sharp turns on continuous fiber toolpaths can be avoided, and
+the thermal distortion in metallic printing can be reduced by 24.9%.</div>
       </div>
     </div>
     <!--/ Abstract. -->
@@ -159,11 +164,11 @@ We propose a semantic-aware neural reconstruction method to generate 3D high-fid
 
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">How SERES works</h2>
+        <h2 class="title is-3">How our system works</h2>
         <div class="content has-text-justified">
-          <img src="./static/images/figure_2_update_color.png" width="90%" style="margin-left: auto;margin-right: auto;display: block;">
+          <img src="./static/images/subgraph triangle18.png" width="90%" style="margin-left: auto;margin-right: auto;display: block;">
           <p>&nbsp;</p>
-          <p>The basic idea of SERES is that computing a neural field from sparse input views for 3D reconstruction, incorrect matching is a major source of unsuccessful reconstruction. By incorporating semantic priors that are visualized as the masks of color patches on an additional layer, more correct matches can be obtained and this will significantly improved the quality of reconstruction.
+          <p>Our  RL-based planner is used to compute optimized toolpaths for 3D printing by navigating a graph. The method involves exploring a graph structured into local sub-graphs (LSGs) with defined neighbor rings, focusing on a current node. The planner uses a deep Q-network to evaluate and select the next best node based on learned Q-values, considering the current state of exploration, which incorporates the positions of nodes and their adjacency relationships. This process highlights changes and decisions in the path planning through color-coded blocks to visualize differences in adjacency matrices, aiding in understanding the transition between states. The method iteratively applies this process to navigate through the graph, ultimately determining an optimized toolpath, demonstrated through a series of illustrative steps and the resulting toolpath. This approach showcases how reinforcement learning can be effectively applied to complex pathfinding problems in 3D printing applications.
           </p>
         </div>
         <br/>
@@ -185,11 +190,11 @@ We propose a semantic-aware neural reconstruction method to generate 3D high-fid
 
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Our methods</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <img src="./static/images/overview.png" width="90%" style="margin-left: auto;margin-right: auto;display: block;">
           <p>&nbsp;</p>
-          <p>The overall pipeline of  SERES encompasses the capability to reconstruct high-quality geometric meshes from sparse view input. We generate patches and primitives from sparse input and construct a semantic-aware neural field. The semantic matching prior for patches and the point prompt guided regularization are the fundamental components of the semantic-aware neural field. We optimize the learning of the neural field by incorporating the RGB loss obtained from volume rendering, along with the eikonal loss and the region loss obtained from point prompt-guided regularization.          </p>
+          <p> This method utilizes an advanced planner for optimizing 3D printing toolpaths across three applications: wire-frame models, continuous fiber reinforced layers, and LPBF metal printing. Starting with specific input graphs for each task, the planner generates tailored toolpaths that meet manufacturing objectives. These paths are visualized in distinct colors—red, green, and blue arrows—to indicate different sections or movements. The effectiveness of these optimized toolpaths is confirmed through physical experiments, demonstrating the planner's capability to enhance efficiency and quality in diverse 3D printing processes.</p>
         </div>
         <br/>
 
@@ -210,39 +215,56 @@ We propose a semantic-aware neural reconstruction method to generate 3D high-fid
       <div class="column is-full-width">	
         <h2 class="title is-3">Experimental results</h2>
 
-        <h3 class="title is-4">Three views reconstruction on the DTU benchmark</h3>
+        <h3 class="title is-4">Progressive results of the planned toolpaths</h3>
         <div class="content has-text-justified">
-          <img src="./static/images/FigDTUDatasetRes.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
-		  <p> Results of reconstruction for models in the DTU benchmark from 3 sparse views (as shown in the first column). The reconstruction results of prior methods are plagued by either geometric distortions (pixelNeRF and MVSNeRF ) or the loss of structural integrity (SparseNeuS and VolRecon ). Our SERES can reconstruct much more complete geometry with details. </p>
+          <img src="./static/images/pathTracing.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
+		  <p>Progressive results of the planned toolpaths for (a) wire-frame printing, (b) CCF printing, and (c) metallic printing. For CCF printing, bold lines are those edges traveled twice. The first graph of each printing process is the input graph </p>
 
         </div>
         <br/>
-        <h3 class="title is-4">Three views reconstruction on the BMVS benchmark</h3>
+        <h3 class="title is-4">Comparisons of CCF printing for tensile test</h3>
         <div class="content has-text-justified">
-          <img src="./static/images/FigBlendedMVSRes.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
-		  <p>  Our SERES pipeline demonstrates superior performance in reconstructing models from the challenging BlendedMVS dataset using only 3 sparse views as shown in the first column. Unlike prior methods that often result in incomplete structures with holes, our approach can reconstruct more complete geometry with details </p>
+          <img src="./static/images/compare ccf3.png" width="80%" style="margin-left: auto;margin-right: auto;display: block;">
+		  <p> Comparisons of CCF printing for the Shell model: (top) the toolpath
+generated by the dual-graph based DFS method  and
+(bottom) our toolpath. As the number of sharp turns have been significantly
+reduced on our toolpath, stronger mechanical strength is observed in the
+tensile test. Specifically, specimen fabricated by our toolpath shows 29%
+increased breaking force while using 28% less CCF.</p>
 
         </div>
         <br/>
-        <h3 class="title is-4">SERES in geometric reconstruction and view synthesis as a plugin</h3>
+        <h3 class="title is-4">Comparisons of wireframe printing</h3>
         <div class="content has-text-justified">
-          <img src="./static/images/owl_update_size.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
-		  <img src="./static/images/FigQualitativeRes .png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
-		  <p> Experimental tests of our SERES as plugins to improve both the Neus and the Neuralangelo baselines, where the owl model is reconstructed from 3 views. It can be observed that the quality of both the reconstructed geometry and the images obtained from novel view synthesis has been significantly improved to approach the ground truth </p>
+          <img src="./static/images/compare wireframe (1).png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
+		  <p> Comparison of the printing results of two models by using the
+toolpath generated by peeling heuristic vs. the toolpath
+generated by our RL-based planner. When using the peeling-like toolpath,
+we can observe the failure cases of  large bending deformation on struts
+and </p>
 
         </div>
         <br/>
-        <h3 class="title is-4">Ablation study</h3>
+        <h3 class="title is-4">Comparisons of metallic printing for thermal warpage study</h3>
         <div class="content has-text-justified">
-          <img src="./static/images/FigAblation.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
-		  <p> Ablation study to explain the functionality of each module of our SERES pipeline, where ‘W/o Semantic’ and ‘Fixed Semantic’ refer to the results without incorporating semantic priors vs giving a fixed semantic matching prior (i.e., without optimization). The results of ‘W/o Point-prompt’ vs ‘Full’ demonstrate that our point-prompt guided regularization effectively mitigates mesh noise and reduces shape ambiguity. The values of chamfer distance (CD) are also given for each results</p>
+          <img src="./static/images/compare metal distortion.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
+		  <p> Thermal warpage study using different toolpaths to print the Femur
+model on the initial plate, including the zigzag toolpath, the chessboard
+toolpath and our toolpath. Distortions are measured by
+3D scanner and displayed as colormaps. Distortion on the initial plate is
+0.10mm. Maximum distortion on the specimen printed by our toolpath is
+1.84mm, which is reduced by 24.90% and 24.28% compared to the zigzag
+toolpath (2.45mm) and the chessboard toolpath (2.43mm). 
+</p>
 
         </div>
         <br/>
-        <h3 class="title is-4">Number of views on the reconstruction</h3>
+        <h3 class="title is-4">All fabrication results </h3>
         <div class="content has-text-justified">
-          <img src="./static/images/Fig_NumOfViews.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
-          <p> This study demonstrates that using more number of views, ranging from 2 to 9, can reduce up to 40.8% of the chamfer distances on the results of reconstruction. As can be found from the zoom-views, more input views are helpful to address radiance-ambiguity therefore contribute to the reconstruction of nuanced disparities.          </p>
+          <img src="./static/images/manufacturing results.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
+          <p> Our method has been tested on a variety of models by incorporating the manufacturing objectives in different applications: (a) wire-frame printing,
+(b) CCF printing for CFRTPs, and (c) LPBF-based metallic printing. (Top Row) Computational results for toolpath planning. (Bottom Row) Fabrication results
+for the corresponding models.      </p>
         </div>
        
       </div>
