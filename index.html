@@ -177,13 +177,8 @@ here to demonstrate generality. The resultant toolpaths have been applied in phy
         <div class="content has-text-justified">
           <img src="./static/images/subgraph triangle18.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
           <p>&nbsp;</p>
-          <p>llustration of using our RL-based planner to compute the toolpath on a graph G. Our RL-based planner explores G on a Local Search Graph (LSG) with n-rings
-of neighbors (n = 2 in this example), given a current node v<sub>c</sub> (orange one). The next best node of v<sub>c</sub> is determined by learning an updated deep
-Q-network to compute the Q-values (green bars) on every nodes in the LSG according to the state S<sup>*</sup>. The moving state S<sup>*</sup> is a tensor commonly determined
-by the current LSG and two previous steps in the partially planned toolpath (in black), which is formed by three adjacency matrices A<sup>‡</sup>, A<sup>†</sup> and A together
-with the positions of the LSG’s nodes listed in the last three columns. Color blocks in highlight the differences between A<sup>†</sup> and A (pink color) and between
-A<sup>‡</sup> and A<sup>†</sup> (blue color). The best next node will update to the graph G. Repeatedly applying this RL-based planner can determine the resultant toolpath.
-          </p>
+          <p>(a)-(e) Illustration of using our <i>Q</i>-learning based planner to compute the toolpath on a graph <i>&#x1D540;</i>. Our on-the-fly planner explores <i>&#x1D540;</i> on a LSG with <i>n</i>-rings of neighbors (<i>n</i>=2 in this example), given a current node <i>v<sub>c</sub></i> (orange in (b,g,h)). (f) The moving state <b><i>S</i></b> of <i>v<sub>c</sub></i> is a 3D matrix commonly determined by the current LSG and two previous steps in the partially planned toolpath (in black), which is formed by three adjacency matrices <b><i>A</i></b>, <b><i>A</i><sup>&#x2020;</sup></b> and <b><i>A</i><sup>&#x2021;</sup></b>. (g, h) The next best node of <i>v<sub>c</sub></i> is determined by learning an updated deep <i>Q</i>-network to compute the <i>Q</i>-values (green bars) on every node in the LSG according to the state <b><i>S</i><sup>*</sup></b>. Color blocks in (f) highlight the differences between <b><i>A</i></b> and <b><i>A</i><sup>&#x2020;</sup></b> (pink color) and between <b><i>A</i><sup>&#x2020;</sup></b> and <b><i>A</i><sup>&#x2021;</sup></b> (blue color). The best next node from (h) will update to become the next current node in (c). Repeatedly applying this <i>Q</i>-learning based planner can determine the resultant toolpath as shown in (e).</p>
+
         </div>
         <br/>
 
