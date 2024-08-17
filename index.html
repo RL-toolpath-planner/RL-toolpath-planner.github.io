@@ -7,6 +7,9 @@
   <meta name="keywords" content="RL, Toolpath, 3D Printing">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Learning Based Toolpath Planner on Diverse Graphs for 3D Printing</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
@@ -180,7 +183,7 @@ here to demonstrate generality. The resultant toolpaths have been applied in phy
         <div class="content has-text-justified">
           <img src="./static/images/subgraph triangle18.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
           <p>&nbsp;</p>
-          <p>This illustration shows how our <i>Q</i>-learning based planner computes the toolpath on a graph <i>&#x1D540;</i>. The planner explores <i>&#x1D540;</i> on a Local Search Graph (LSG) with <i>n</i>-rings of neighbors (<i>n</i>=2 in this example), starting from a given current node <i>v<sub>c</sub></i> (highlighted in orange). The moving state <b><i>S</i></b> of <i>v<sub>c</sub></i> is a 3D matrix determined by the current LSG and two previous steps in the partially planned toolpath (shown in black). This state is formed by three adjacency matrices <b><i>A</i></b>, <b><i>A</i><sup>&#x2020;</sup></b>, and <b><i>A</i><sup>&#x2021;</sup></b>. The next best node for <i>v<sub>c</sub></i> is determined by an updated deep <i>Q</i>-network, which computes the <i>Q</i>-values (indicated by green bars) for every node in the LSG based on the state <b><i>S</i><sup>*</sup></b>. Color blocks highlight the differences between <b><i>A</i></b> and <b><i>A</i><sup>&#x2020;</sup></b> (pink) and between <b><i>A</i><sup>&#x2020;</sup></b> and <b><i>A</i><sup>&#x2021;</sup></b> (blue). The best next node becomes the new current node, and by repeatedly applying this <i>Q</i>-learning based planner, the resultant toolpath is determined.</p>
+          <p>This illustration shows how our <i>Q</i>-learning based planner computes the toolpath on a graph <i>$\mathcal{G}$</i>. The planner explores <i>$\mathcal{G}$</i> on a Local Search Graph (LSG) with <i>n</i>-rings of neighbors (<i>n</i>=2 in this example), starting from a given current node <i>v<sub>c</sub></i> (highlighted in orange). The moving state <b><i>S</i></b> of <i>v<sub>c</sub></i> is a 3D matrix determined by the current LSG and two previous steps in the partially planned toolpath (shown in black). This state is formed by three adjacency matrices <b><i>A</i></b>, <b><i>A</i><sup>&#x2020;</sup></b>, and <b><i>A</i><sup>&#x2021;</sup></b>. The next best node for <i>v<sub>c</sub></i> is determined by an updated deep <i>Q</i>-network, which computes the <i>Q</i>-values (indicated by green bars) for every node in the LSG based on the state <b><i>S</i><sup>*</sup></b>. Color blocks highlight the differences between <b><i>A</i></b> and <b><i>A</i><sup>&#x2020;</sup></b> (pink) and between <b><i>A</i><sup>&#x2020;</sup></b> and <b><i>A</i><sup>&#x2021;</sup></b> (blue). The best next node becomes the new current node, and by repeatedly applying this <i>Q</i>-learning based planner, the resultant toolpath is determined.</p>
 
         </div>
         <br/>
